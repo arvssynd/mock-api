@@ -8,15 +8,29 @@ server.use(middlewares)
 
 server.get('/customers/index', (request, response) => {
     if (request.method === 'GET') {
-        const users = require('./customers/index')
-        response.status(200).jsonp(users())
+        const result = require('./customers/index')
+        response.status(200).jsonp(result())
     }
 })
 
 server.post('/customers/getPaginatedResult', (request, response) => {
     if (request.method === 'POST') {
-        const users = require('./customers/getPaginatedResult')
-        response.status(200).jsonp(users())
+        const result = require('./customers/getPaginatedResult')
+        response.status(200).jsonp(result())
+    }
+})
+
+server.post('/products/getPaginatedResult', (request, response) => {
+    if (request.method === 'POST') {
+        const result = require('./products/getPaginatedResult')
+        response.status(200).jsonp(result())
+    }
+})
+
+server.post('/cities/getPaginatedResult', (request, response) => {
+    if (request.method === 'POST') {
+        const result = require('./cities/getPaginatedResult')
+        response.status(200).jsonp(result())
     }
 })
 
