@@ -13,9 +13,16 @@ server.get('/customers/index', (request, response) => {
     }
 })
 
-server.post('/customers/getPaginatedResult', (request, response) => {
+server.post('/users/getPaginatedResult', (request, response) => {
     if (request.method === 'POST') {
         const result = require('./customers/getPaginatedResult')
+        response.status(200).jsonp(result())
+    }
+})
+
+server.post('/items/getPaginatedResult', (request, response) => {
+    if (request.method === 'POST') {
+        const result = require('./items/getPaginatedResult')
         response.status(200).jsonp(result())
     }
 })
@@ -27,7 +34,7 @@ server.post('/products/getPaginatedResult', (request, response) => {
     }
 })
 
-server.post('/cities/getPaginatedResult', (request, response) => {
+server.post('/zipcodes/getPaginatedResult', (request, response) => {
     if (request.method === 'POST') {
         const result = require('./cities/getPaginatedResult')
         response.status(200).jsonp(result())

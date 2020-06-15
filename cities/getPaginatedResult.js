@@ -9,17 +9,27 @@ module.exports = () => {
         }
     })
 
+    // const data = {
+    //     data: [],
+    //     totalPages: 2,
+    //     totalElements: 30,
+    //     page: 1,
+    //     elementsPerPage: 25
+    // }
+
     const data = {
-        data: [],
-        totalPages: 2,
-        totalElements: 30,
-        page: 1,
-        elementsPerPage: 25
+        results: [],
+        // totalPages: 2,
+        count: 150,
+        next: 'http://127.0.0.1:8000/v1/items/?includeProperties=false&page=2',
+        previous: 'http://127.0.0.1:8000/v1/items/?includeProperties=false&page=2'
+        // page: 1,
+        // elementsPerPage: 25
     }
 
     // Create 100 users
     for (let i = 0; i < 20; i++) {
-        data.data.push(casual.city)
+        data.results.push(casual.city)
     }
 
     return data

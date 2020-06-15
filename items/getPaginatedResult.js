@@ -1,17 +1,10 @@
 const casual = require('casual')
 
 module.exports = () => {
-    casual.define('customer', function () {
+    casual.define('item', function () {
         return {
-            name: casual.first_name,
-            surname: casual.last_name,
-            address: casual.street,
-            phone: casual.phone,
-            email: casual.email,
-            postalCode: casual.zip,
-            city: casual.city,
-            number: casual.building_number,
-            id: casual.uuid,
+            name: casual.name,
+            description: casual.description
         }
     })
 
@@ -22,7 +15,6 @@ module.exports = () => {
     //     page: 1,
     //     elementsPerPage: 25
     // }
-
     const data = {
         results: [],
         // totalPages: 2,
@@ -35,7 +27,7 @@ module.exports = () => {
 
     // Create 100 users
     for (let i = 0; i < 20; i++) {
-        data.results.push(casual.customer)
+        data.results.push(casual.item)
     }
 
     return data
