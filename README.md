@@ -1,4 +1,4 @@
-## Running the server
+## Run the server
 
 Run `npm i`
 
